@@ -40,19 +40,22 @@ Note:*也可以使用删除多个文件的方法*
 
 Note:通过网页在远程仓库增删，同步到本地都是拉取分支。
 
-## git仓库版本回退
+## 三、git revert
 
-[原文路径](https://blog.csdn.net/yxlshk/article/details/79944535)
+**在当前版本下删除git log中的某一条commit的变更文件**
 
-**git revert**
+[参考博文](https://blog.csdn.net/yxlshk/article/details/79944535)
+
+****
 
 ```shell
 #step1:确定反做版本
 git revert -n 需要反做的版本号version_name
-#step2:修改并且提交反做记录
+#step2:修改并且提交反做记录(这一步做完之后,revert的那一条记录的文件就全部不见了)
 Revert "version_name对应的commit"
-git commit -m "revert add text.txt"
-#step4：上推远程仓库
+#step3：上推远程仓库
 git push origin your-branch
+#这样上推的结果就是对应的commit的变动记录消失
 ```
 
+![image-20220328205710138](https://pic-1304959529.cos.ap-guangzhou.myqcloud.com/DB/image-20220328205710138.png)
