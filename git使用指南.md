@@ -39,3 +39,20 @@ Note:*也可以使用删除多个文件的方法*
 > ```
 
 Note:通过网页在远程仓库增删，同步到本地都是拉取分支。
+
+## git仓库版本回退
+
+[原文路径](https://blog.csdn.net/yxlshk/article/details/79944535)
+
+**git revert**
+
+```shell
+#step1:确定反做版本
+git revert -n 需要反做的版本号version_name
+#step2:修改并且提交反做记录
+Revert "version_name对应的commit"
+git commit -m "revert add text.txt"
+#step4：上推远程仓库
+git push origin your-branch
+```
+
