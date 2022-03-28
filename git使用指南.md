@@ -42,7 +42,7 @@ Note:通过网页在远程仓库增删，同步到本地都是拉取分支。
 
 ## 三、git revert
 
-**在当前版本下删除git log中的某一条commit的变更文件**
+**在当前版本下删除git log中的某一条commit的变更操作**
 
 [参考博文](https://blog.csdn.net/yxlshk/article/details/79944535)
 
@@ -55,7 +55,7 @@ git revert -n 需要反做的版本号version_name
 Revert "version_name对应的commit"
 #step3：上推远程仓库
 git push origin your-branch
-#这样上推的结果就是对应的commit的变动记录消失
+#这样上推的结果就是对应的commit的变动痕迹消失
 ```
 
 ![image-20220328205710138](https://pic-1304959529.cos.ap-guangzhou.myqcloud.com/DB/image-20220328205710138.png)
