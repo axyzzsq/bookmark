@@ -59,3 +59,32 @@ git push origin your-branch
 ```
 
 ![image-20220328205710138](https://pic-1304959529.cos.ap-guangzhou.myqcloud.com/DB/image-20220328205710138.png)
+
+## 四、变更git日志(以及作者信息)
+
+> 1. ```shell
+>    git rebase -i HEAD~Num  #Num:前面几个版本就输入数字几
+>    ```
+>
+> 2. 其中每一行就是某次提交，把`pick`修改为`edit`，保存退出该文本编辑器。
+>
+> 3. ```shell
+>    git commit --amend  #进入修改
+>    ```
+>
+> 4. ```shell
+>    git rebase --continue  #提交
+>    ```
+>
+> 5. 有时候基变会失败，需要git add --all才能解决,一般git会给出提示。
+>
+> 6. ```shell
+>    git log  #检查
+>    ```
+>
+> > 如果需要修改作者的信息
+> >
+> > >1.把作者信息修改成预期,
+> > >` git config user.name 'your new name'  ` ; 
+> > >` git config user.email your_email@email `   
+> > >2.重新提交日志，`git commit --amend --reset-author `
