@@ -12,8 +12,6 @@ mac_rw a40dbc068562
 MAC &*#S#*&{"command":5,"airGuid":"A4:0D:BC:06:0F:C9"}&*#E#*&
 ```
 
-【空中花园】
-
 0. ### 服务器samba服务重启     
 
 ```shell
@@ -126,7 +124,7 @@ cd /etc/init.d
    >    >   #压缩和解压文件
    >    >   [root@localhost tmp]# zip boduo.zip boduo
    >    >   [root@localhost tmp]# unzip boduo.zip
-   >    >         
+   >    >           
    >    >   #压缩和解压目录
    >    >   [root@localhost tmp]# zip -r Demo.zip Demo
    >    >     adding: Demo/ (stored 0%)
@@ -161,7 +159,7 @@ cd /etc/init.d
    >    >   #压缩
    >    >   [root@localhost tmp]# bzip2 boduo
    >    >   [root@localhost tmp]# bzip2 -k boduo
-   >    >         
+   >    >           
    >    >   #解压
    >    >   [root@localhost tmp]# bunzip2 boduo.bz2 
    >    >   ```
@@ -185,7 +183,7 @@ cd /etc/init.d
    >    >   #压缩
    >    >   [root@localhost tmp]# 7z a package.7z .\product\* -r -mx=9    
    >    >   # 将当前product文件夹下所有文件压缩到package.7z，package.7z中的文件名不包含product\前缀。
-   >    >         
+   >    >           
    >    >   #解压
    >    >   [root@localhost tmp]# 7z a package.7z .\product\   
    >    >   #将当前product文件夹下所有文件压缩到package.7z，package.7z中的文件名包含product\前缀。
