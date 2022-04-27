@@ -1,33 +1,41 @@
 # Linux开发指令
 
-【空中花园写mac地址】
+## 1、空中花园项目
 
-```
-mac_rw a40dbc068562
-```
+- 写mac地址
 
-【空中花园心跳】
+	```C
+	mac_rw A40DBC0DF14D
+	```
 
-```
-MAC &*#S#*&{"command":5,"airGuid":"A4:0D:BC:06:0F:C9"}&*#E#*&
-```
+- 心跳包
 
-【空中花园获取设备ID】
+	```C
+	MAC &*#S#*&{"command":5,"airGuid":"A4:0D:BC:0D:F1:4D"}&*#E#*&
+	```
 
-```C
-PULL &*#S#*&{"command":7,"airGuid":"A4:0D:BC:0D:F1:4D","pullData":{"airGuid":"A4:0D:BC:0D:F1:4D","userID":0,"option":1}}&*#E#*&
-```
+- 获取设备ID
 
+	```C
+	PULL &*#S#*&{"command":7,"airGuid":"A4:0D:BC:0D:F1:4D","pullData":{"airGuid":"A4:0D:BC:0D:F1:4D","userID":0,"option":1}}&*#E#*&
+	```
 
+- 获取升级信息
 
-## 0、服务器samba服务重启     
+	```C
+	&*#S#*&{"command":6,"updateDate":"2022-04-27T06:59:02.6937057+00:00","airGuid":"A4:0D:BC:0D:F1:4D","result":null,"pullData":{"fwModule":"kew","bwVersion":"HW-V7.5"}}&*#E#*&
+	```
+
+	
+
+## 2、服务器samba服务重启     
 
 ```shell
 cd /etc/init.d
 ./smbd restart
 ```
 
-## 1、Linux环境变量设置
+## 3、Linux环境变量设置
 
 ```shell
 setenv gatewayip （ip）   
@@ -37,7 +45,7 @@ setenv serverip（ip）
 saveenv 
 ```
 
-## 2、mnt挂载
+## 4、mnt挂载
 
 ```shell
 mount -t nfs -o nolock -o tcp 10.136.5.23:/workspace1/siqing/nfs /mnt/
@@ -56,7 +64,7 @@ mount -t nfs -o nolock -o tcp 192.168.31.228:/home/string/nfs /mnt/
 
 
 
-## 3、设备开关网卡
+## 5、设备开关网卡
 
 > Ifconfig 网络接口名 up 命令用于启动网络接口等同于ifup
 >
@@ -68,7 +76,7 @@ mount -t nfs -o nolock -o tcp 192.168.31.228:/home/string/nfs /mnt/
 
 
 
-## 4、文件夹解压缩
+## 6、文件夹解压缩
 
 > 1. #### gzip
 >
@@ -196,7 +204,7 @@ mount -t nfs -o nolock -o tcp 192.168.31.228:/home/string/nfs /mnt/
 >    >   #将当前product文件夹下所有文件压缩到package.7z，package.7z中的文件名包含product\前缀。
 >    >   ```
 
-## 5.python版本软连接切换
+## 7、python版本软连接切换
 
 ```
 sudo update-alternatives --config python
