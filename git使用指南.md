@@ -88,3 +88,7 @@ git push origin your-branch
 > > >` git config user.name 'your new name'  ` ; 
 > > >` git config user.email your_email@email `   
 > > >2.重新提交日志，`git commit --amend --reset-author `
+>
+> Note：查看当前的git作者信息
+>
+> > `git config --list`
