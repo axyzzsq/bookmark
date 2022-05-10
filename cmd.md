@@ -47,7 +47,11 @@
 - 获取升级信息
 
 	```C
-	&*#S#*&{"command":6,"updateDate":"2022-04-27T06:59:02.6937057+00:00","airGuid":"A4:0D:BC:0D:F1:4D","result":null,"pullData":{"fwModule":"kew","bwVersion":"HW-V7.5"}}&*#E#*&
+	PULL &*#S#*&{"command":6,"airGuid":"A4:0D:BC:0D:85:62","pullData":{"fwModule":"kew","bwVersion":"HW-V7.5"}}&*#E#*&
+	```
+	
+	```C
+	PULL &*#S#*&{"command":6,"airGuid":"A4:0D:BC:0D:F1:4D","pullData":{"fwModule":"kew","bwVersion":"HW-V7.5"}}&*#E#*&
 	```
 
 
@@ -184,7 +188,7 @@ mount -t nfs -o nolock -o tcp 192.168.31.228:/home/string/nfs /mnt/
 >    >   #压缩和解压文件
 >    >   [root@localhost tmp]# zip boduo.zip boduo
 >    >   [root@localhost tmp]# unzip boduo.zip
->    >                         
+>    >                           
 >    >   #压缩和解压目录
 >    >   [root@localhost tmp]# zip -r Demo.zip Demo
 >    >     adding: Demo/ (stored 0%)
@@ -219,7 +223,7 @@ mount -t nfs -o nolock -o tcp 192.168.31.228:/home/string/nfs /mnt/
 >    >   #压缩
 >    >   [root@localhost tmp]# bzip2 boduo
 >    >   [root@localhost tmp]# bzip2 -k boduo
->    >                         
+>    >                           
 >    >   #解压
 >    >   [root@localhost tmp]# bunzip2 boduo.bz2 
 >    >   ```
@@ -243,7 +247,7 @@ mount -t nfs -o nolock -o tcp 192.168.31.228:/home/string/nfs /mnt/
 >    >   #压缩
 >    >   [root@localhost tmp]# 7z a package.7z .\product\* -r -mx=9    
 >    >   # 将当前product文件夹下所有文件压缩到package.7z，package.7z中的文件名不包含product\前缀。
->    >                         
+>    >                           
 >    >   #解压
 >    >   [root@localhost tmp]# 7z a package.7z .\product\   
 >    >   #将当前product文件夹下所有文件压缩到package.7z，package.7z中的文件名包含product\前缀。
