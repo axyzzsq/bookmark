@@ -10,21 +10,27 @@
 	
 - 写mac地址
 
-	```C
-	mac_rw A40DBC0DF14D
-	```
+  ```C
+  mac_rw A40DBC0DF14D
+  mac_rw A40DBC0D8562
+  ```
 
 - 心跳包
 
-	```C
-	MAC &*#S#*&{"command":5,"airGuid":"A4:0D:BC:0D:F1:4D"}&*#E#*&
-	```
+  ```C
+  MAC &*#S#*&{"command":5,"airGuid":"A4:0D:BC:0D:F1:4D"}&*#E#*&
+  
+  MAC &*#S#*&{"command":5,"airGuid":"A4:0D:BC:0D:85:62"}&*#E#*&
+  ```
 
 - 获取设备ID
 
-	```C
-	PULL &*#S#*&{"command":7,"airGuid":"A4:0D:BC:0D:F1:4D","pullData":{"airGuid":"A4:0D:BC:0D:F1:4D","userID":0,"option":1}}&*#E#*&
-	```
+  ```C
+  PULL &*#S#*&{"command":7,"airGuid":"A4:0D:BC:0D:F1:4D","pullData":{"airGuid":"A4:0D:BC:0D:F1:4D","userID":0,"option":1}}&*#E#*&
+      
+  
+  PULL &*#S#*&{"command":7,"airGuid":"A4:0D:BC:0D:85:62","pullData":{"airGuid":"A4:0D:BC:0D:85:62","userID":0,"option":1}}&*#E#*&
+  ```
 
 - 获取升级信息
 
@@ -166,7 +172,7 @@ mount -t nfs -o nolock -o tcp 192.168.31.228:/home/string/nfs /mnt/
 >    >   #压缩和解压文件
 >    >   [root@localhost tmp]# zip boduo.zip boduo
 >    >   [root@localhost tmp]# unzip boduo.zip
->    >                     
+>    >                       
 >    >   #压缩和解压目录
 >    >   [root@localhost tmp]# zip -r Demo.zip Demo
 >    >     adding: Demo/ (stored 0%)
@@ -201,7 +207,7 @@ mount -t nfs -o nolock -o tcp 192.168.31.228:/home/string/nfs /mnt/
 >    >   #压缩
 >    >   [root@localhost tmp]# bzip2 boduo
 >    >   [root@localhost tmp]# bzip2 -k boduo
->    >                     
+>    >                       
 >    >   #解压
 >    >   [root@localhost tmp]# bunzip2 boduo.bz2 
 >    >   ```
@@ -225,7 +231,7 @@ mount -t nfs -o nolock -o tcp 192.168.31.228:/home/string/nfs /mnt/
 >    >   #压缩
 >    >   [root@localhost tmp]# 7z a package.7z .\product\* -r -mx=9    
 >    >   # 将当前product文件夹下所有文件压缩到package.7z，package.7z中的文件名不包含product\前缀。
->    >                     
+>    >                       
 >    >   #解压
 >    >   [root@localhost tmp]# 7z a package.7z .\product\   
 >    >   #将当前product文件夹下所有文件压缩到package.7z，package.7z中的文件名包含product\前缀。
