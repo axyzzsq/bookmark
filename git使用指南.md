@@ -92,3 +92,16 @@ git push origin your-branch
 > Note：查看当前的git作者信息
 >
 > > `git config --list`
+
+
+
+## 五、git删除未跟踪的文件
+
+```shell
+git clean -nfxd
+# -n  加上 -n 参数来先看看会删掉哪些文件，防止重要文件被误删
+# -f 删除 untracked files
+# -fd 删除 untracked files
+# -xfd 连 gitignore 的untrack 文件/目录也一起删掉 （慎用，一般这个是用来删掉编译出来的 .o之类的文件用的）
+```
+
