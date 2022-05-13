@@ -56,4 +56,6 @@
 
 
 
+> Note：
+>
 > 源码安装的python可能缺失ssl依赖,对应依赖缺失的时候需要执行python2.7和python3.8对应的openssl源码安装，需要改py的配置文件，添加对应的ssl路径。
