@@ -32,7 +32,7 @@
 
 ## 二、源码安装python3.8
 
-执行同上 1.  2.  3.  4.步骤，在/home/siqing/myTools/python3中安装python3版本
+下载python3源码，执行同上 1.  2.  3.  4.步骤，在/home/siqing/myTools/python3中安装python3版本
 
 
 
@@ -54,3 +54,6 @@
 
 	![image-20220513170003971](https://pic-1304959529.cos.ap-guangzhou.myqcloud.com/DB/image-20220513170003971.png)
 
+
+
+> 源码安装的python可能缺失ssl依赖,对应依赖缺失的时候需要执行python2.7和python3.8对应的openssl源码安装，需要改py的配置文件，添加对应的ssl路径。
