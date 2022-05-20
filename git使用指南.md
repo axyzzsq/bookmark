@@ -105,3 +105,18 @@ git clean -nfxd
 # -xfd 连 gitignore 的untrack 文件/目录也一起删掉 （慎用，一般这个是用来删掉编译出来的 .o之类的文件用的）
 ```
 
+
+
+## 六、删除分支
+
+```shell
+# 删除一个本地分支
+git branch -d 本地分支名
+
+# 删除不掉强制删除本地一个分支
+git branch -D 本地分支名
+
+# 删除远程分支
+git push origin --delete 远程分支名
+```
+
