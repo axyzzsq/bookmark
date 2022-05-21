@@ -75,7 +75,34 @@
  reset
 ```
 
+### （3）Kernel menuconfig
 
+- step1:进入kernel/目录,执行 build_elsa_lcd.sh脚本中编译kernel部分
+
+	```shell
+	declare -x ARCH="arm"
+	declare -x CROSS_COMPILE="arm-linux-gnueabihf-"
+	make pioneer3_ssc020a_s01a_spinand_demo_camera_defconfig
+	```
+
+- step2:
+
+	```shell
+	make menuconfig
+	```
+
+- step3:修改menuconfig中的配置项，保存后退出
+- step4:对比kernel目录下的.config文件把修改项配置到kernel\arch\arm\configs\pioneer3_ssc020a_s01a_spinand_demo_camera_defconfig中去
+
+ ![image-20220521110919174](https://pic-1304959529.cos.ap-guangzhou.myqcloud.com/DB/image-20220521110919174.png)
+
+- step5:在/project目录下执行编译指令
+
+	```shell
+	make image -j15
+	```
+
+	
 
 ## 3、服务器samba服务重启     
 
@@ -196,7 +223,7 @@ mount -t nfs -o nolock -o tcp 192.168.31.228:/home/string/nfs /mnt/
 >    >   #压缩和解压文件
 >    >   [root@localhost tmp]# zip boduo.zip boduo
 >    >   [root@localhost tmp]# unzip boduo.zip
->    >                               
+>    >                                 
 >    >   #压缩和解压目录
 >    >   [root@localhost tmp]# zip -r Demo.zip Demo
 >    >     adding: Demo/ (stored 0%)
@@ -231,7 +258,7 @@ mount -t nfs -o nolock -o tcp 192.168.31.228:/home/string/nfs /mnt/
 >    >   #压缩
 >    >   [root@localhost tmp]# bzip2 boduo
 >    >   [root@localhost tmp]# bzip2 -k boduo
->    >                               
+>    >                                 
 >    >   #解压
 >    >   [root@localhost tmp]# bunzip2 boduo.bz2 
 >    >   ```
@@ -255,7 +282,7 @@ mount -t nfs -o nolock -o tcp 192.168.31.228:/home/string/nfs /mnt/
 >    >   #压缩
 >    >   [root@localhost tmp]# 7z a package.7z .\product\* -r -mx=9    
 >    >   # 将当前product文件夹下所有文件压缩到package.7z，package.7z中的文件名不包含product\前缀。
->    >                               
+>    >                                 
 >    >   #解压
 >    >   [root@localhost tmp]# 7z a package.7z .\product\   
 >    >   #将当前product文件夹下所有文件压缩到package.7z，package.7z中的文件名包含product\前缀。
