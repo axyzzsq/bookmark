@@ -120,3 +120,11 @@ git branch -D 本地分支名
 git push origin --delete 远程分支名
 ```
 
+
+
+## 七、撤销git add操作
+
+```shell
+git reset HEAD
+```
+
