@@ -300,3 +300,16 @@ export CROSS_COMPILE=arm-buildroot-linux-gnueabihf-
 export PATH=$PATH:/home/share/100ask_imx6ull-sdk/ToolChain/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin
 ```
 
+在~/.bashrc末行插入环境变量
+
+接着执行`source ~/.bashrc`
+
+最后验证工具链是不是配置完成了
+
+```shell
+arm-buildroot-linux-gnueabihf-gcc -v
+```
+
+显示如下则表示配置完成了
+
+![image-20220605203712106](https://pic-1304959529.cos.ap-guangzhou.myqcloud.com/DB/image-20220605203712106.png)
