@@ -292,9 +292,11 @@ mount -t nfs -o nolock -o tcp 192.168.31.228:/home/string/nfs /mnt/
 
 ### (1)交叉编译工具链
 
+**第三条的路径要随着环境变化**
+
 ```shell
 export ARCH=arm
 export CROSS_COMPILE=arm-buildroot-linux-gnueabihf-
-export PATH=$PATH:/home/book/100ask_imx6ull-sdk/ToolChain/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin
+export PATH=$PATH:/home/share/100ask_imx6ull-sdk/ToolChain/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin
 ```
 
