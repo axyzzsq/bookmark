@@ -90,7 +90,30 @@ sync  #同步文件
 reboot #重启后log查看文件编译时间
 ```
 
+## 4.单独编译更新uboot
 
+### 4.1编译u-boot镜像
+
+```shell
+cd Uboot-2017.03
+make distclean
+make  mx6ull_14x14_evk_defconfig
+make
+#等编译结束之后把uboot镜像文件u-boot-dtb.imx拷贝到开发板上的home目录下
+```
+
+### 4.2 烧录uboot
+
+```shell
+echo 0 > /sys/block/mmcblk1boot0/force_ro  #失能分区写保护
+dd if=u-boot-dtb.imx of=/dev/mmcblk1boot0 bs=512 seek=2
+echo 1 > /sys/block/mmcblk1boot0/force_ro #重新使能分区写保护
+reboot
+```
+
+系统重启后查看log，可以看到u-boot是刚刚编译完成的
+
+![image-20220703183831397](https://pic-1304959529.cos.ap-guangzhou.myqcloud.com/DB/image-20220703183831397.png)
 
 
 
