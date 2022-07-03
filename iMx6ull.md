@@ -1,14 +1,14 @@
 # iMx6ull开发指令
 
-## 1.NFS挂载
+## 1. NFS挂载
 
 ```shell
 mount -t nfs -o nolock,vers=3 192.168.123.39:/home/book/nfs_rootfs /mnt
 ```
 
-## 2.配置交叉编译工具链
+## 2. 配置交叉编译工具链
 
-### 2.1永久生效
+### 2.1 永久生效
 
 ```shell
 vim  ~/.bashrc
@@ -20,7 +20,7 @@ export PATH=$PATH:/home/book/100ask_imx6ull-sdk/ToolChain/arm-buildroot-linux-gn
 source  ~/.bashrc
 ```
 
-### 2.2临时生效
+### 2.2 临时生效
 
 ```shell
 export ARCH=arm
@@ -28,31 +28,31 @@ export CROSS_COMPILE=arm-buildroot-linux-gnueabihf-
 export PATH=$PATH:/home/book/100ask_imx6ull-sdk/ToolChain/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin
 ```
 
-### 2.3手动指定
+### 2.3 手动指定
 
 ```shell
 export PATH=$PATH:/home/book/100ask_imx6ull-sdk/ToolChain/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin
 make  ARCH=arm CROSS_COMPILE=arm-buildroot-linux-gnueabihf-
 ```
 
-### 2.4测试交叉编译工具链
+### 2.4 测试交叉编译工具链
 
-#### 2.4.1.测试环境变量
+#### 2.4.1 测试环境变量
 
 ```shell
 echo $ARCH
 echo $CROSS_COMPILE
 ```
 
-#### 2.4.2.测试交叉编译器
+#### 2.4.2 测试交叉编译器
 
 ```shell
 arm-buildroot-linux-gnueabihf-gcc -v
 ```
 
-## 3.单独编译更新kernel + dtb 内核模块
+## 3. 单独编译更新kernel + dtb 内核模块
 
-### 3.1编译内核镜像
+### 3.1 编译内核镜像
 
 ```shell
 cd Linux-4.9.88
@@ -63,7 +63,7 @@ cp arch/arm/boot/zImage ~/nfs_rootfs
 cp arch/arm/boot/dts/100ask_imx6ull-14x14.dtb  ~/nfs_rootfs  #不要错把.dts拷过去，没用
 ```
 
-### 3.2编译安装内核模块
+### 3.2 编译安装内核模块
 
 #### 3.2.1 编译内核模块
 
@@ -79,7 +79,7 @@ cd ~/100ask_imx6ull-sdk/Linux-4.9.88/
 sudo make  ARCH=arm INSTALL_MOD_PATH=/home/book/nfs_rootfs  modules_install
 ```
 
-#### 3.2.3安装内核和模块到开发板上
+#### 3.2.3 安装内核和模块到开发板上
 
 ```shell
 #首先进行挂载，然后拷贝文件
@@ -90,9 +90,9 @@ sync  #同步文件
 reboot #重启后log查看文件编译时间
 ```
 
-## 4.单独编译更新uboot
+## 4. 单独编译更新uboot
 
-### 4.1编译u-boot镜像
+### 4.1 编译u-boot镜像
 
 ```shell
 cd Uboot-2017.03
@@ -115,5 +115,27 @@ reboot
 
 ![image-20220703183831397](https://pic-1304959529.cos.ap-guangzhou.myqcloud.com/DB/image-20220703183831397.png)
 
+## 5. 更新驱动
 
+### 5.1 编译内核镜像
+
+编译驱动程序之前，要确保Linux内核镜像已经编译
+
+驱动程序的Makefile中KERN_DIR需要指向内核代码的目录；
+
+![image-20220703185646157](https://pic-1304959529.cos.ap-guangzhou.myqcloud.com/DB/image-20220703185646157.png)
+
+### 5.2 编译安装内核模块
+
+编译驱动程序之前，要确保Linux内核模块已经编译
+
+### 5.3 编译驱动程序
+
+### 5.4 安装驱动
+
+```shell
+insmod  100ask_led.ko
+```
+
+卸载驱动命令 `rmmod 100ask_led`
 
