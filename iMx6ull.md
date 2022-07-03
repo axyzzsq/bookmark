@@ -79,7 +79,7 @@ cd ~/100ask_imx6ull-sdk/Linux-4.9.88/
 sudo make  ARCH=arm INSTALL_MOD_PATH=/home/book/nfs_rootfs  modules_install
 ```
 
-### 3.3安装内核和模块到开发板上
+#### 3.3安装内核和模块到开发板上
 
 ```shell
 #首先进行挂载，然后拷贝文件
