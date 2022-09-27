@@ -223,7 +223,7 @@ mount -t nfs -o nolock -o tcp 192.168.31.228:/home/string/nfs /mnt/
 >    >   #压缩和解压文件
 >    >   [root@localhost tmp]# zip boduo.zip boduo
 >    >   [root@localhost tmp]# unzip boduo.zip
->    >                                   
+>    >                                     
 >    >   #压缩和解压目录
 >    >   [root@localhost tmp]# zip -r Demo.zip Demo
 >    >     adding: Demo/ (stored 0%)
@@ -258,7 +258,7 @@ mount -t nfs -o nolock -o tcp 192.168.31.228:/home/string/nfs /mnt/
 >    >   #压缩
 >    >   [root@localhost tmp]# bzip2 boduo
 >    >   [root@localhost tmp]# bzip2 -k boduo
->    >                                   
+>    >                                     
 >    >   #解压
 >    >   [root@localhost tmp]# bunzip2 boduo.bz2 
 >    >   ```
@@ -282,11 +282,18 @@ mount -t nfs -o nolock -o tcp 192.168.31.228:/home/string/nfs /mnt/
 >    >   #压缩
 >    >   [root@localhost tmp]# 7z a package.7z .\product\* -r -mx=9    
 >    >   # 将当前product文件夹下所有文件压缩到package.7z，package.7z中的文件名不包含product\前缀。
->    >                                   
+>    >   
 >    >   #解压
 >    >   [root@localhost tmp]# 7z a package.7z .\product\   
 >    >   #将当前product文件夹下所有文件压缩到package.7z，package.7z中的文件名包含product\前缀。
 >    >   ```
+>
+> 6. xz
+>
+>    > - 创建tar.xz文件
+>    >   - 执行`tar cvf xxx.tar xxx`，创建出`xxx.tar文件`，然后使用`xz -z xxx.tar xxx`把`xxx.tar`文件压缩成`xxx.tar.xz`
+>    > - 解压tar.xz文件
+>    >   - 执行`xz -d xxx.tar.xz`将`xxx.tar.xz`解压成`xxx.tar`，再执行`tar vxf xxx.tar`解压的到文件夹
 
 ## 9. iMx6ull pro
 
