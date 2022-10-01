@@ -146,7 +146,13 @@ mount -t nfs -o nolock -o tcp 192.168.123.135:/home/string/nfs /mnt/
 mount -t nfs -o nolock -o tcp 192.168.31.228:/home/string/nfs /mnt/
 ```
 
+-  如果设备没有自动获取ip，执行：
 
+  ```shell
+  udhcpc -i eth0(或者是wlan0等网卡名称)
+  ```
+
+  
 
 ## 7、设备开关网卡
 
@@ -223,7 +229,7 @@ mount -t nfs -o nolock -o tcp 192.168.31.228:/home/string/nfs /mnt/
 >    >   #压缩和解压文件
 >    >   [root@localhost tmp]# zip boduo.zip boduo
 >    >   [root@localhost tmp]# unzip boduo.zip
->    >                                     
+>    >                                       
 >    >   #压缩和解压目录
 >    >   [root@localhost tmp]# zip -r Demo.zip Demo
 >    >     adding: Demo/ (stored 0%)
@@ -258,7 +264,7 @@ mount -t nfs -o nolock -o tcp 192.168.31.228:/home/string/nfs /mnt/
 >    >   #压缩
 >    >   [root@localhost tmp]# bzip2 boduo
 >    >   [root@localhost tmp]# bzip2 -k boduo
->    >                                     
+>    >                                       
 >    >   #解压
 >    >   [root@localhost tmp]# bunzip2 boduo.bz2 
 >    >   ```
@@ -282,7 +288,7 @@ mount -t nfs -o nolock -o tcp 192.168.31.228:/home/string/nfs /mnt/
 >    >   #压缩
 >    >   [root@localhost tmp]# 7z a package.7z .\product\* -r -mx=9    
 >    >   # 将当前product文件夹下所有文件压缩到package.7z，package.7z中的文件名不包含product\前缀。
->    >   
+>    >     
 >    >   #解压
 >    >   [root@localhost tmp]# 7z a package.7z .\product\   
 >    >   #将当前product文件夹下所有文件压缩到package.7z，package.7z中的文件名包含product\前缀。
