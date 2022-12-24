@@ -7,6 +7,10 @@
 	命令行接入指令 `wscat -c ws://139.9.69.238:8089 ` 
 	
 	测试站点：http://139.9.69.238:8088/testlocal.htm
+- Load证书
+  ```shell
+  openssl s_client -showcerts -connect test.aerogarden.com:8443 </dev/null
+  ```
 	
 - 写mac地址
 
