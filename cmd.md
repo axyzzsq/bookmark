@@ -233,7 +233,7 @@ mount -t nfs -o nolock -o tcp 192.168.31.228:/home/string/nfs /mnt/
 >    >   #压缩和解压文件
 >    >   [root@localhost tmp]# zip boduo.zip boduo
 >    >   [root@localhost tmp]# unzip boduo.zip
->    >                                       
+>    >                                         
 >    >   #压缩和解压目录
 >    >   [root@localhost tmp]# zip -r Demo.zip Demo
 >    >     adding: Demo/ (stored 0%)
@@ -268,7 +268,7 @@ mount -t nfs -o nolock -o tcp 192.168.31.228:/home/string/nfs /mnt/
 >    >   #压缩
 >    >   [root@localhost tmp]# bzip2 boduo
 >    >   [root@localhost tmp]# bzip2 -k boduo
->    >                                       
+>    >                                         
 >    >   #解压
 >    >   [root@localhost tmp]# bunzip2 boduo.bz2 
 >    >   ```
@@ -292,7 +292,7 @@ mount -t nfs -o nolock -o tcp 192.168.31.228:/home/string/nfs /mnt/
 >    >   #压缩
 >    >   [root@localhost tmp]# 7z a package.7z .\product\* -r -mx=9    
 >    >   # 将当前product文件夹下所有文件压缩到package.7z，package.7z中的文件名不包含product\前缀。
->    >     
+>    >       
 >    >   #解压
 >    >   [root@localhost tmp]# 7z a package.7z .\product\   
 >    >   #将当前product文件夹下所有文件压缩到package.7z，package.7z中的文件名包含product\前缀。
@@ -330,3 +330,13 @@ arm-buildroot-linux-gnueabihf-gcc -v
 显示如下则表示配置完成了
 
 ![image-20220605203712106](https://pic-1304959529.cos.ap-guangzhou.myqcloud.com/DB/image-20220605203712106.png)
+
+
+
+## 10、base64输出对齐
+
+```shell
+base64 -w 0 img.png | fold -w 80 -s
+```
+
+这将把“img.png”的base64编码结果分成每行80个字符，并在终端上对齐输出。
