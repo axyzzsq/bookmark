@@ -18,7 +18,7 @@ Note:*也可以使用删除多个文件的方法*
 
 > - 先在本地仓库中删除你要删除的多个文件
 >
->     ![](https://pic-1304959529.cos.ap-guangzhou.myqcloud.com/DB/20220326204252.png)
+>      ![](https://pic-1304959529.cos.ap-guangzhou.myqcloud.com/DB/20220326204252.png)
 >
 > - 添加文件`$ git add --all `(提交所有变化)
 >
