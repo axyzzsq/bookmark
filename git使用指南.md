@@ -50,6 +50,10 @@ git push origin master
 
 这将从git仓库中删除文件夹并提交更改。
 
+
+
+
+
 ## 三、git revert
 
 **在当前版本下删除git log中的某一条commit的变更操作**
