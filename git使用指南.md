@@ -28,7 +28,7 @@ Note:*也可以使用删除多个文件的方法*
 
 
 
-## 二、git删除远程仓库文件同步本地仓库文件
+## 二(1) git删除远程仓库文件同步本地仓库文件
 
 >  1.在远程仓库中删除文件
 >
@@ -39,6 +39,16 @@ Note:*也可以使用删除多个文件的方法*
 > ```
 
 Note:通过网页在远程仓库增删，同步到本地都是拉取分支。
+
+## 二(2) 通过指令删除远程仓库的文件夹
+
+```shell
+git rm -r --cached foldername  #如果是删除文件而非文件夹就不用-r
+git commit -m "Removed folder from repository"
+git push origin master
+```
+
+这将从git仓库中删除文件夹并提交更改。
 
 ## 三、git revert
 
