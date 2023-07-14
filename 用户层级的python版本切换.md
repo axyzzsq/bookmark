@@ -2,6 +2,8 @@
 
 > 在用户目录下以源码安装的方式创建自己不同的python版本，切换不受系统管理控制，也不影响其他用户。
 
+
+
 ## 一、源码安装python2.7
 
 1. 到[Python官网2.7版本目录](https://www.python.org/downloads/release/python-2718/)下载源码包XZ_compressed_source_tarball，到ubuntu中解压Python-2.7.18.tar.xz得到Python-2.7.18文件夹；
