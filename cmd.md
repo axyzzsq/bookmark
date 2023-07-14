@@ -1,6 +1,6 @@
 # Linux开发指令
 
-## 1、MTK7682/ESP32 prj
+## websocket-MTK7682/ESP32 prj
 
 - 华为产测服务器：ws://139.9.69.238:8089
 
@@ -57,6 +57,39 @@
 	```C
 	PULL &*#S#*&{"command":6,"airGuid":"A4:0D:BC:0D:F1:4D","pullData":{"fwModule":"kew","bwVersion":"HW-V7.5"}}&*#E#*&
 	```
+
+## MQTT-Test
+
+### 测试工具:
+
+[mosquitto-clients](http://www.steves-internet-guide.com/install-mosquitto-linux/)
+
+```shell
+# 安装
+sudo apt-get install mosquitto-clients
+```
+
+### 测试服务器：
+
+- broker URL: `gpssensor.ddns.net`
+
+- sub_topic:`LASS/Test/Pm25Ameba/#`
+
+- pub_topic:`LASS/Test/Pm25Ameba/FT1_018`
+
+```shell
+# publish: 
+mosquitto_pub -h <broker-ip-address> -t <topic> -m <message>
+# example:
+mosquitto_pub -h gpssensor.ddns.net -t LASS/Test/Pm25Ameba/FT1_018 -m Hello
+
+
+# subscribe:
+mosquitto_sub -h <broker-ip-address> -t <topic>
+# example:
+mosquitto_sub -h gpssensor.ddns.net -t LASS/Test/Pm25Ameba/#
+```
+
 
 
 ## 2、 Sigmastar LCD prj
@@ -233,7 +266,7 @@ mount -t nfs -o nolock -o tcp 192.168.31.228:/home/string/nfs /mnt/
 >    >   #压缩和解压文件
 >    >   [root@localhost tmp]# zip boduo.zip boduo
 >    >   [root@localhost tmp]# unzip boduo.zip
->    >                                         
+>    >                                           
 >    >   #压缩和解压目录
 >    >   [root@localhost tmp]# zip -r Demo.zip Demo
 >    >     adding: Demo/ (stored 0%)
@@ -268,7 +301,7 @@ mount -t nfs -o nolock -o tcp 192.168.31.228:/home/string/nfs /mnt/
 >    >   #压缩
 >    >   [root@localhost tmp]# bzip2 boduo
 >    >   [root@localhost tmp]# bzip2 -k boduo
->    >                                         
+>    >                                           
 >    >   #解压
 >    >   [root@localhost tmp]# bunzip2 boduo.bz2 
 >    >   ```
@@ -292,7 +325,7 @@ mount -t nfs -o nolock -o tcp 192.168.31.228:/home/string/nfs /mnt/
 >    >   #压缩
 >    >   [root@localhost tmp]# 7z a package.7z .\product\* -r -mx=9    
 >    >   # 将当前product文件夹下所有文件压缩到package.7z，package.7z中的文件名不包含product\前缀。
->    >       
+>    >         
 >    >   #解压
 >    >   [root@localhost tmp]# 7z a package.7z .\product\   
 >    >   #将当前product文件夹下所有文件压缩到package.7z，package.7z中的文件名包含product\前缀。
