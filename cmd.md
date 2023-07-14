@@ -92,7 +92,7 @@ mosquitto_sub -h gpssensor.ddns.net -t LASS/Test/Pm25Ameba/#
 
 
 
-## 2、 Sigmastar LCD prj
+## Sigmastar LCD prj
 
 ### (1)编译工程
 
@@ -141,14 +141,14 @@ mosquitto_sub -h gpssensor.ddns.net -t LASS/Test/Pm25Ameba/#
 
 	
 
-## 3、服务器samba服务重启     
+## 服务器samba服务重启     
 
 ```shell
 cd /etc/init.d
 ./smbd restart
 ```
 
-## 4、python版本软连接切换
+## python版本软连接切换
 
 ```
 sudo update-alternatives --config python
@@ -156,7 +156,7 @@ sudo update-alternatives --config python
 
 输入需要切换的python版本的序号。
 
-## 5、Linux环境变量设置
+## Linux环境变量设置
 
 ```shell
 setenv gatewayip （ip）   
@@ -166,7 +166,7 @@ setenv serverip（ip）
 saveenv 
 ```
 
-## 6、mnt挂载
+## mnt挂载
 
 ```shell
 mount -t nfs -o nolock -o tcp 10.136.5.23:/workspace1/siqing/nfs /mnt/
@@ -191,7 +191,7 @@ mount -t nfs -o nolock -o tcp 192.168.31.228:/home/string/nfs /mnt/
 
   
 
-## 7、设备开关网卡
+## 设备开关网卡
 
 > Ifconfig 网络接口名 up 命令用于启动网络接口等同于ifup
 >
@@ -203,7 +203,7 @@ mount -t nfs -o nolock -o tcp 192.168.31.228:/home/string/nfs /mnt/
 
 
 
-## 8、文件夹解压缩
+## 文件夹解压缩
 
 > 1. #### gzip
 >
@@ -338,7 +338,7 @@ mount -t nfs -o nolock -o tcp 192.168.31.228:/home/string/nfs /mnt/
 >    > - 解压tar.xz文件
 >    >   - 执行`xz -d xxx.tar.xz`将`xxx.tar.xz`解压成`xxx.tar`，再执行`tar vxf xxx.tar`解压的到文件夹
 
-## 9. iMx6ull pro
+## iMx6ull pro
 
 ### (1)交叉编译工具链
 
@@ -366,7 +366,7 @@ arm-buildroot-linux-gnueabihf-gcc -v
 
 
 
-## 10、base64输出对齐
+## base64输出对齐
 
 ```shell
 base64 -w 0 img.png | fold -w 80 -s
