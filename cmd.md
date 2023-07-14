@@ -112,7 +112,7 @@ mosquitto_sub -h gpssensor.ddns.net -t LASS/Test/Pm25Ameba/#
  reset
 ```
 
-### （3）Kernel menuconfig
+### (3) Kernel menuconfig
 
 - step1:进入kernel/目录,执行 build_elsa_lcd.sh脚本中编译kernel部分
 
@@ -141,12 +141,18 @@ mosquitto_sub -h gpssensor.ddns.net -t LASS/Test/Pm25Ameba/#
 
 	
 
+
+
 ## 服务器samba服务重启     
 
 ```shell
 cd /etc/init.d
 ./smbd restart
 ```
+
+
+
+
 
 ## python版本软连接切换
 
@@ -155,6 +161,10 @@ sudo update-alternatives --config python
 ```
 
 输入需要切换的python版本的序号。
+
+
+
+
 
 ## Linux环境变量设置
 
@@ -165,6 +175,10 @@ setenv netmask （ip）
 setenv serverip（ip）  
 saveenv 
 ```
+
+
+
+
 
 ## mnt挂载
 
@@ -191,6 +205,8 @@ mount -t nfs -o nolock -o tcp 192.168.31.228:/home/string/nfs /mnt/
 
   
 
+
+
 ## 设备开关网卡
 
 > Ifconfig 网络接口名 up 命令用于启动网络接口等同于ifup
@@ -200,6 +216,8 @@ mount -t nfs -o nolock -o tcp 192.168.31.228:/home/string/nfs /mnt/
 >    `ifconfig eth0 up/down`     
 >
 >  `ifup/ifdown eth0`
+
+
 
 
 
@@ -338,6 +356,10 @@ mount -t nfs -o nolock -o tcp 192.168.31.228:/home/string/nfs /mnt/
 >    > - 解压tar.xz文件
 >    >   - 执行`xz -d xxx.tar.xz`将`xxx.tar.xz`解压成`xxx.tar`，再执行`tar vxf xxx.tar`解压的到文件夹
 
+
+
+
+
 ## iMx6ull pro
 
 ### (1)交叉编译工具链
@@ -363,6 +385,8 @@ arm-buildroot-linux-gnueabihf-gcc -v
 显示如下则表示配置完成了
 
 ![image-20220605203712106](https://pic-1304959529.cos.ap-guangzhou.myqcloud.com/DB/image-20220605203712106.png)
+
+
 
 
 
