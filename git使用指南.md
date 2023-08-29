@@ -142,3 +142,21 @@ git push origin --delete 远程分支名
 git reset HEAD
 ```
 
+## 八、局部/全局配置user信息
+
+使用`git config`命令来设置一个仓库特定的`user.email`。在制定的仓库目录中，运行以下命令：
+
+```
+git config user.email "your_email@example.com"
+```
+
+这将在当前仓库中设置一个特定的`user.email`。
+
+如果想要在全局范围内设置`user.email`，可以使用以下命令：
+
+```
+git config --global user.email "your_email@example.com"
+```
+
+
+
