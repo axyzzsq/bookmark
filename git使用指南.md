@@ -1,6 +1,6 @@
 # git使用指南
 
-## 一、git删除本地文件同步远程文件
+## git删除本地文件同步远程文件
 
 ### 1、删除单个文件
 
@@ -28,7 +28,7 @@ Note:*也可以使用删除多个文件的方法*
 
 
 
-## 二(1) git删除远程仓库文件同步本地仓库文件
+## git删除远程仓库文件同步本地仓库文件
 
 >  1.在远程仓库中删除文件
 >
@@ -40,7 +40,7 @@ Note:*也可以使用删除多个文件的方法*
 
 Note:通过网页在远程仓库增删，同步到本地都是拉取分支。
 
-## 二(2) 通过指令删除远程仓库的文件夹
+## 通过指令删除远程仓库的文件夹
 
 ```shell
 git rm -r --cached foldername  #如果是删除文件而非文件夹就不用-r
@@ -54,7 +54,7 @@ git push origin master
 
 
 
-## 三、git revert
+## git revert
 
 **在当前版本下删除git log中的某一条commit的变更操作**
 
@@ -74,7 +74,7 @@ git push origin your-branch
 
 ![image-20220328205710138](https://pic-1304959529.cos.ap-guangzhou.myqcloud.com/DB/image-20220328205710138.png)
 
-## 四、变更git日志(以及作者信息)
+## 变更git日志(以及作者信息)
 
 > 1. ```shell
 >    git rebase -i HEAD~Num  #Num:前面几个版本就输入数字几
@@ -109,7 +109,7 @@ git push origin your-branch
 
 
 
-## 五、git删除未跟踪的文件
+## git删除未跟踪的文件
 
 ```shell
 git clean -nfxd
@@ -121,7 +121,7 @@ git clean -nfxd
 
 
 
-## 六、删除分支
+## 删除分支
 
 ```shell
 # 删除一个本地分支
@@ -136,13 +136,13 @@ git push origin --delete 远程分支名
 
 
 
-## 七、撤销git add操作
+## 撤销git add操作
 
 ```shell
 git reset HEAD
 ```
 
-## 八、局部/全局配置user信息
+## 局部/全局配置user信息
 
 使用`git config`命令来设置一个仓库特定的`user.email`。在制定的仓库目录中，运行以下命令：
 
@@ -160,3 +160,10 @@ git config --global user.email "your_email@example.com"
 
 
 
+## 中文乱码问题
+
+```shell
+git config --global core.quotePath false
+```
+
+![image-20230919170941532](https://pic-1304959529.cos.ap-guangzhou.myqcloud.com/DB/image-20230919170941532.png)
