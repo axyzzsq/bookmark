@@ -156,13 +156,29 @@ cd /etc/init.d
 
 ## python版本软连接切换
 
-```
-sudo update-alternatives --config python
-```
+1. **修改别名**：您可以使用以下命令修改默认Python版本的别名：
 
-输入需要切换的python版本的序号。
+   ```shell
+   $ alias python='/usr/bin/python3'
+   ```
 
+   这将把默认Python版本更改为Python 3。这种更改是暂时性的，重启终端后将失效。
 
+2. **链接文件**：您可以在`/usr/bin`中创建一个链接文件，将其指向Python 3。使用以下命令：
+
+   ```shell
+   $ ln -s /usr/bin/python3 /usr/bin/python
+   ```
+
+   这将把默认Python版本更改为Python 3。这种更改是暂时性的，重启终端后将失效。
+
+3. **update-alternatives**：您可以使用`update-alternatives`命令切换Python版本。使用以下命令：
+
+   ```shell
+   $ sudo update-alternatives --config python
+   ```
+
+   然后选择想要的Python版本的编号即可。
 
 
 
@@ -284,7 +300,7 @@ mount -t nfs -o nolock -o tcp 192.168.31.228:/home/string/nfs /mnt/
 >    >   #压缩和解压文件
 >    >   [root@localhost tmp]# zip boduo.zip boduo
 >    >   [root@localhost tmp]# unzip boduo.zip
->    >                                           
+>    >                                             
 >    >   #压缩和解压目录
 >    >   [root@localhost tmp]# zip -r Demo.zip Demo
 >    >     adding: Demo/ (stored 0%)
@@ -319,7 +335,7 @@ mount -t nfs -o nolock -o tcp 192.168.31.228:/home/string/nfs /mnt/
 >    >   #压缩
 >    >   [root@localhost tmp]# bzip2 boduo
 >    >   [root@localhost tmp]# bzip2 -k boduo
->    >                                           
+>    >                                             
 >    >   #解压
 >    >   [root@localhost tmp]# bunzip2 boduo.bz2 
 >    >   ```
@@ -343,7 +359,7 @@ mount -t nfs -o nolock -o tcp 192.168.31.228:/home/string/nfs /mnt/
 >    >   #压缩
 >    >   [root@localhost tmp]# 7z a package.7z .\product\* -r -mx=9    
 >    >   # 将当前product文件夹下所有文件压缩到package.7z，package.7z中的文件名不包含product\前缀。
->    >         
+>    >           
 >    >   #解压
 >    >   [root@localhost tmp]# 7z a package.7z .\product\   
 >    >   #将当前product文件夹下所有文件压缩到package.7z，package.7z中的文件名包含product\前缀。
